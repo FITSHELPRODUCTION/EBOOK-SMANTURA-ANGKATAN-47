@@ -22,11 +22,15 @@ body {
 /* Ukuran untuk DUA halaman terbuka (420 x 2 = 840) */
 .book-container {
     width: 100%;
-    max-width: 840px; 
-    height: 90vh; /* Tingginya ngikutin tinggi layar HP/Laptop */
+    max-width: 840px;
+    height: 90vh;
     max-height: 600px;
+    
+    /* TAMBAHIN/GANTI DENGAN KODE INI */
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Biar posisi container-nya selalu di tengah */
 }
 /* Bikin wadah bukunya patuh sama batas ukuran */
 #book {
