@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         maxHeight: 1350,
         maxShadowOpacity: 0.5, 
         showCover: true, 
-        usePortrait: true // <--- Ini yang bikin di HP otomatis jadi 1 halaman doang
+        usePortrait: false,
+        mobileViewSupport: true // <--- Ini yang bikin di HP otomatis jadi 1 halaman doang
     });
 
     // Perintah buat me-load 149 halaman yang udah kita generate di atas
