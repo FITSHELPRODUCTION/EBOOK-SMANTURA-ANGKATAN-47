@@ -16,21 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 2. AKTIFIN EFEK BUKU MELENGKUNG (StPageFlip)
-    const pageFlip = new St.PageFlip(bookElement, { 
-        size: "stretch", // <--- GANTI "fixed" JADI "stretch"
-        minWidth: 315,
-        maxWidth: 1000,
-        minHeight: 420,
-        maxHeight: 1350,
-        maxShadowOpacity: 0.5, 
-        showCover: true, 
-        usePortrait: false,
-        mobileViewSupport: true // <--- Ini yang bikin di HP otomatis jadi 1 halaman doang
-    });
+    const pageFlip = new St.PageFlip(document.getElementById('book'), {
+    width: 400, // Lebar halaman
+    height: 600, // Tinggi halaman
+    size: "fixed", // Pakai ukuran tetap
+    showCover: true,
+    usePortrait: true, // INI KUNCINYA: Paksa mode 1 halaman terus
+    mobileViewSupport: true // Biar di HP juga enak
+});
 
-    // Perintah buat me-load 149 halaman yang udah kita generate di atas
-    pageFlip.loadFromHTML(document.querySelectorAll('.my-page'));
-
+pageFlip.loadFromHTML(document.querySelectorAll(".my-page"));
     // 3. FUNGSI TOMBOL NAVIGASI
     document.getElementById('nextBtn').addEventListener('click', () => {
         pageFlip.flipNext(); // Perintah otomatis dari library buat buka halaman selanjutnya
